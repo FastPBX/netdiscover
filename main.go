@@ -6,8 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"github.com/CyCoreSystems/netdiscover/discover"
+	"github.com/FastPBX/netdiscover/discover"
 )
 
 var (
@@ -55,6 +54,8 @@ func main() {
 		discoverer = discover.NewDigitalOceanDiscoverer()
 	case "gcp":
 		discoverer = discover.NewGCPDiscoverer()
+	case "vultr":
+		discoverer = discover.NewVultrDiscoverer()
 	default:
 		discoverer = discover.NewDiscoverer()
 	}
